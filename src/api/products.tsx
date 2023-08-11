@@ -18,6 +18,6 @@ export const deleteP = (id: number | string) => {
     return instance.delete(`/products/${id}`)
 }
 
-export const updateP = (id: number | string, obj: object) => {
+export const updateP = (id: number | string | undefined, obj: object) => {
     return instance.put(`/products/${id}`, obj)
 }

@@ -1,17 +1,11 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { addU, getAllUser } from "../api/users";
-import { useEffect } from "react";
+import { addU } from "../api/users";
 import bcryptjs from "bcryptjs";
 import { Iuser } from "../types";
 
 function SignUp({ datas }: {datas: Iuser[]}) {
 
     const { register, formState: { errors }, handleSubmit } = useForm<Iuser>()
-    useEffect(() => {
-        getAllUser().then(({ data }) => {
-            console.log(data);
-        })
-    }, []);
 
     const HandAdd:SubmitHandler<Iuser> = async (data:Iuser) => {
         const fill = datas.find(u => u.email === data.email)
