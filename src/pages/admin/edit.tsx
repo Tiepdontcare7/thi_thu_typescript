@@ -4,15 +4,14 @@ import { useParams } from 'react-router-dom'
 import { updateP } from "../../api/products";
 import { IProducts } from "../../types";
 
-function EditProduct({ data }: { data: IProducts }) {
+function EditProduct({ data }: { data: IProducts[] }) {
     const { id } = useParams();
-    console.log(id);
 
     const { reset, register, formState: { errors }, handleSubmit } = useForm<IProducts>()
 
 
     useEffect(() => {
-        const fil = data.find(p => p.id == id)
+        const fil = data.find(p => p.id === +id)
         reset(fil)
     }, [data, id, reset]);
 
@@ -58,7 +57,7 @@ function EditProduct({ data }: { data: IProducts }) {
 
             <div className="flex items-center justify-between">
                 <button type="submit" className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
-                    Sign in
+                    Update product
                 </button>
             </div>
         </form>
