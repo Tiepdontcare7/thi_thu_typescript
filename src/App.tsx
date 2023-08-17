@@ -12,11 +12,11 @@ import { getAllUser } from './api/users'
 import SignIn from './pages/signIn'
 
 function App() {
-  const [producs, setProducts] = useState([])
+  const [producs, setP] = useState([])
   const [users, setU] = useState([])
 
   useEffect(() => {
-    getAll().then(({ data }) => setProducts(data))
+    getAll().then(({ data }) => setP(data))
   }, [])
 
   useEffect(() => {

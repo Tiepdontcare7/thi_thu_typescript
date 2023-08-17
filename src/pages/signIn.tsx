@@ -6,7 +6,7 @@ function SignIn({ datas }: { datas: Iuser[] }) {
 
     const { register, formState: { errors }, handleSubmit } = useForm<Iuser>()
 
-    const HandAdd:SubmitHandler<Iuser> = async (data: Iuser) => {
+    const HandAdd: SubmitHandler<Iuser> = async (data: Iuser) => {
         const fill: Iuser | undefined = datas.find(u => u.email == data.email)
         if (fill) {
             const checkPassword = await bcryptjs.compare(data.password, fill.password)

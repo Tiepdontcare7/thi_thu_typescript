@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { IProducts } from '../types';
 
 function Products({ data }: { data: IProducts[] }) {
+    
     return (
         <section>
             <div className="max-w-screen-xl px-4 py-8 mx-auto sm:px-6 sm:py-12 lg:px-8">
@@ -36,7 +37,6 @@ function Products({ data }: { data: IProducts[] }) {
                             )
                         })
                     }
-
                 </ul>
             </div>
         </section>

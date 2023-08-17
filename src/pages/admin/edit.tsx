@@ -9,7 +9,6 @@ function EditProduct({ data }: { data: IProducts[] }) {
 
     const { reset, register, formState: { errors }, handleSubmit } = useForm<IProducts>()
 
-
     useEffect(() => {
         const fil = data.find(p => p.id === +id)
         reset(fil)

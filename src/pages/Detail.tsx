@@ -4,10 +4,10 @@ import { IProducts } from '../types';
 function DetailPage({ data }:{data: IProducts[]}) {
     const { id } = useParams()
 
-    const product = data.find(p => p.id == id)
+    const product = data.find(p => p.id === +id)
 
     return (
-        <div>
+        <div className='max-w-[500px]'>
             <img src={product?.img} alt="err" />
             <h2>{product?.name}</h2>
             <p>{product?.desc}</p>
